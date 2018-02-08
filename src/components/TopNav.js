@@ -1,5 +1,7 @@
 import React from "react";
 import MessagePreview from "./MessagePreview";
+import {connect} from "react-redux";
+//refer to tickets.js for notes
 
 function TopNav(props) {
   return (
@@ -66,4 +68,11 @@ function TopNav(props) {
     </ul>);
 }
 
-export default TopNav;
+const mapStateToProps = function (state) {
+  return {
+    messages: state.messages
+  };
+}
+ export default connect(mapStateToProps,null)(TopNav);
+
+// export default TopNav;

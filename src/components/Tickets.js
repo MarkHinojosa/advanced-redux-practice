@@ -1,4 +1,5 @@
 import React from "react";
+//to turn a component into a container, import connect and...
 import {connect} from "react-redux";
 
 function Tickets(props) {
@@ -26,12 +27,16 @@ function Tickets(props) {
       </div>
     </div>);
 }
+
+//use this boiler plate, tickets is the key in state that this compononet uses
 const mapStateToProps = function (state) {
   return {
     tickets: state.tickets
   };
 };
-export default (Tickets);
-// export default connect(mapStateToProps,null)(Tickets);
+
+// export default (Tickets);
+//then export connect and components like this
+export default connect(mapStateToProps,null)(Tickets);
 
 
